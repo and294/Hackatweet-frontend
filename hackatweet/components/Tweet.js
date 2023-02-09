@@ -3,6 +3,7 @@ import { faTrash, faHeart } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Tweet.module.css";
 
 function Tweet() {
+  
   return (
     <div className={styles.tweetContainer}>
       <div className={styles.headerTweet}>
