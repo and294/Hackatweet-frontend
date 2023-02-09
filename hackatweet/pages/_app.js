@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import Head from "next/head";
-
+import { user } from "../reducers/user";
 import { persistStore, persistReducer } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";
@@ -10,7 +10,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 
 function App({ Component, pageProps }) {
-  const reducers = combineReducers({ tweets, trends });
+  const reducers = combineReducers({ user });
   const persistConfig = { key: "hackatweet", storage };
 
   const store = configureStore({
