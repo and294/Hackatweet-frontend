@@ -7,20 +7,23 @@ function Home() {
       <div className={styles.left}>
         <img src="/twitter-512.png" className={styles.logo} />
         <div className={styles.user}>
-          <img alt="profil pic" />
-          <div>
-            <h6>John</h6>
-            <p>@JohnCena</p>
+          <div className={styles.userInfo}>
+            <img alt="profil pic" />
+            <div className={styles.userName}>
+              <h3>John</h3>
+              <p>@JohnCena</p>
+            </div>
           </div>
-          <button>Logout</button>
+
+          <button className={styles.logoutBtn}>Logout</button>
         </div>
       </div>
 
       <div className={styles.middle}>
         <div className={styles.top}>
-            <h1 className={styles.homeTitle}>Home</h1>
+          <h1 className={styles.homeTitle}>Home</h1>
 
-            <input type="text" name="" id="" className={styles.tweetInput}/>
+          <input type="text" name="" id="" className={styles.tweetInput} />
 
           <div className={styles.lengthAndButton}>
             <p>0/280</p>
@@ -32,7 +35,15 @@ function Home() {
         </div>
       </div>
 
-      <div className={styles.right}></div>
+      <div className={styles.right}>
+        <h1 className={styles.trendTitle}>Trends</h1>
+        <div className={styles.trendContainer}>
+          <div className={styles.trend}>
+            <h4>#hackatweet</h4>
+            <p style={{ color: "gray" }}>2 Tweets</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

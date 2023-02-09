@@ -1,28 +1,53 @@
 .main {
-    display: flex;
-    background-color: #161D26;
-    width: 100vw;
-    height: 100vh;
-    color:white;
+  display: flex;
+  background-color: #161d26;
+  width: 100vw;
+  height: 100vh;
+  color: white;
 }
 
 .logo {
-    width: 20%;
-    rotate: 180deg;
+  width: 20%;
+  rotate: 180deg;
 }
 
 .left {
-width: 20%;
-padding: 30px;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  width: 20%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userInfo{
+  display: flex;
+  align-items: center;
+}
+
+.userName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1px;
+  margin-left: 10px;
+}
+
+.logoutBtn {
+  margin-top: 10px;
+  width: 40%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  background: none;
+  border: 1px solid #3f93e8;
+  color: #3f93e8;
+  cursor: pointer;
 }
 
 .middle {
   width: 45%;
-border-right: 1px solid gray;
-border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
 }
 
 .top {
@@ -49,13 +74,33 @@ border-left: 1px solid gray;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-top: 10px;
 }
 
 .tweetBtn {
-height: 30px; 
+  padding: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  background-color: #3f93e8;
+  border: 1px solid #3f93e8;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .right {
+  width: 36%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
 
+.trendContainer {
+  background-color: #202731;
+  border-radius: 5px;
+  width: 100%;
+
+  padding-left: 20px;
 }
