@@ -3,7 +3,7 @@
     background-color: #161D26;
     width: 100vw;
     height: 100vh;
-    color: white;
+    color:white;
 }
 
 .left {
@@ -47,7 +47,7 @@ width: 40%;
 
 .popoverContent {
     background-color: #161D26;
-    color: white;
+    color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,4 +60,14 @@ width: 40%;
     border: 1px solid white;
     border-radius: 5px;
     margin-bottom: 5px;
+}
+
+.popBtn {
+    width: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background: none;
+    border: 1px solid #3F93E8;
+    color: #3F93E8;
 }

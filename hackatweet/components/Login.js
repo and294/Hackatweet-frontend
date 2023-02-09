@@ -52,7 +52,7 @@ fetch("http://localhost:3000/users/signup", {
 const popoverSignUp = (
   <div className={styles.popoverContent}>
     <img src="/twitter-512.png" className={styles.logo} />
-    <h2>Create your Hackatweet account</h2>
+    <h2 style={{color: 'white'}}>Create your Hackatweet account</h2>
     <input
       type="text"
       placeholder="Firstname"
@@ -71,14 +71,14 @@ const popoverSignUp = (
       className={styles.input}
       onChange={(e) => setPassword(e.target.value)}
     />
-    <button onClick={() => handleSignup()}>Sign up</button>
+    <button className={styles.popBtn} onClick={() => handleSignup()}>Sign up</button>
   </div>
 );
 
 const popoverSignIn = (
   <div className={styles.popoverContent}>
     <img src="/twitter-512.png" className={styles.logo} />
-    <h2>Create your Hackatweet account</h2>
+    <h2 style={{ color: "white" }}>Login your Hackatweet account</h2>
     <input
       type="text"
       placeholder="Username"
@@ -91,7 +91,9 @@ const popoverSignIn = (
       className={styles.input}
       onChange={(e) => setLoginPassword(e.target.value)}
     />
-    <button onClick={() => handleSignin()}>Sign in</button>
+    <button className={styles.popBtn} onClick={() => handleSignin()}>
+      Sign in
+    </button>
   </div>
 );
 
@@ -102,10 +104,10 @@ const popoverSignIn = (
       </div>
       <div className={styles.right}>
         <img src="/twitter-512.png" className={styles.logo} />
-        <h1>
+        <h1 style={{ color: "white" }}>
           See what's <br /> happening
         </h1>
-        <h3>Join Hackatweet today.</h3>
+        <h3 style={{ color: "white" }}>Join Hackatweet today.</h3>
         <Popover
           content={popoverSignUp}
           className={styles.popover}
