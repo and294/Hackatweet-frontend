@@ -13,7 +13,14 @@ function Login() {
     const [loginPassword, setLoginPassword] = useState("");
 
     function handleSignup() {
-fetch("http://localhost:3000/");
+fetch("http://localhost:3000/users/signup", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ firstname: firstName, username: userName, password: password }),
+}).then(response => response.json())
+.then(data => {
+    console.log(data)
+})
     }
 
 const popoverSignUp = (
@@ -38,7 +45,7 @@ const popoverSignUp = (
       className={styles.input}
       onChange={(e) => setPassword(e.target.value)}
     />
-    <button>Sign up</button>
+    <button onClick={() => handleSignup()}>Sign up</button>
   </div>
 );
 
