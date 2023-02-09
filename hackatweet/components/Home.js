@@ -1,4 +1,5 @@
 import styles from "../styles/Home.module.css";
+import Tweet from "./Tweet";
 
 function Home() {
   return (
@@ -25,6 +26,9 @@ function Home() {
             <p>0/280</p>
             <button className={styles.tweetBtn}>Tweet</button>
           </div>
+        </div>
+        <div className={styles.middleBottom}>
+          <Tweet />
         </div>
       </div>
 
