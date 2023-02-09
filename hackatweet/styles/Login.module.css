@@ -1,0 +1,46 @@
+.main {
+    display: flex;
+    background-color: #161D26;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+
+.left {
+    width: 40%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.logo {
+    width: 10%;
+    rotate: 180deg;
+}
+
+.btnSignUp {
+    width: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: #3F93E8;
+    border: 1px solid #3F93E8;
+}
+
+.btnSignIn {
+width: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background: none;
+    border: 1px solid #3F93E8;
+    color: #3F93E8;
+}
