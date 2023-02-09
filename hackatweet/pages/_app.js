@@ -4,6 +4,9 @@ import { user } from "../reducers/user";
 import { persistStore, persistReducer } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";
+import tweets from "../reducers/tweets";
+import trends from "../reducers/trends";
+
 
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 

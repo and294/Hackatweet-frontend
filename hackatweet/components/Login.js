@@ -1,16 +1,43 @@
 import styles from "../styles/Login.module.css";
 import { Popover, Button } from "antd";
 import "antd/dist/reset.css";
+import { useState } from "react";
 
 function Login() {
+
+    const [firstName, setFirstName] = useState('');
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+
+    const [loginUserName, setLoginUserName] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
+
+    function handleSignup() {
+fetch("http://localhost:3000/");
+    }
 
 const popoverSignUp = (
   <div className={styles.popoverContent}>
     <img src="/twitter-512.png" className={styles.logo} />
     <h2>Create your Hackatweet account</h2>
-    <input type="text" />
-    <input type="text" />
-    <input type="text" />
+    <input
+      type="text"
+      placeholder="Firstname"
+      className={styles.input}
+      onChange={(e) => setFirstName(e.target.value)}
+    />
+    <input
+      type="text"
+      placeholder="Username"
+      className={styles.input}
+      onChange={(e) => setUserName(e.target.value)}
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      className={styles.input}
+      onChange={(e) => setPassword(e.target.value)}
+    />
     <button>Sign up</button>
   </div>
 );
@@ -19,9 +46,18 @@ const popoverSignIn = (
   <div className={styles.popoverContent}>
     <img src="/twitter-512.png" className={styles.logo} />
     <h2>Create your Hackatweet account</h2>
-    <input type="text" />
-    <input type="text" />
-    <input type="text" />
+    <input
+      type="text"
+      placeholder="Username"
+      className={styles.input}
+      onChange={(e) => setLoginUserName(e.target.value)}
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      className={styles.input}
+      onChange={(e) => setLoginPassword(e.target.value)}
+    />
     <button>Sign in</button>
   </div>
 );
