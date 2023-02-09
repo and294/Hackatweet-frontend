@@ -2,25 +2,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faHeart } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Tweet.module.css";
 
-function Tweet() {
-  
+function Tweet(props) {
   return (
     <div className={styles.tweetContainer}>
       <div className={styles.headerTweet}>
-        <img className={styles.profilePic}src="../public/Sacha(24).JPG" alt="ProfilePicture" />
-        <span>firstname + username</span>
-        <span>date from now</span>
+        <img
+          className={styles.profilePic}
+          src="../public/Sacha(24).JPG"
+          alt="ProfilePicture"
+        />
+        <span>
+          {props.firstname} - {props.username}
+        </span>
+        <span>•</span>
+        <span>{props.id}</span>
       </div>
       <div className={styles.contentTweet}>
-        <p>content</p>
+        <p>{props.tweet}</p>
       </div>
       <div className={styles.footerTweet}>
-        <div className={styles.footerTweetIcons}>
+        <div>
           <FontAwesomeIcon
+            className={styles.icon}
+            icon={faHeart}
+            onClick={() => console.log("like")}
+          />
+        </div>
+        <div>
+          <FontAwesomeIcon
+            className={styles.icon}
             icon={faTrash}
             onClick={() => console.log("delete")}
           />
-          <FontAwesomeIcon icon={faHeart} onClick={() => console.log("like")} />
         </div>
       </div>
     </div>
