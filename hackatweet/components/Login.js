@@ -17,12 +17,37 @@ function Login() {
 fetch("http://localhost:3000/users/signup", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ firstname: firstName, username: userName, password: password }),
-}).then(response => response.json())
-.then(data => {
-    console.log(data)
+  body: JSON.stringify({
+    firstname: firstName,
+    username: userName,
+    password: password,
+  }),
 })
-    }
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  });
+    };
+
+    	const handleSignin = () => {
+        fetch("http://localhost:3000/users/signin", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: loginUserName,
+            password: loginPassword,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.token) {
+              /*dispatch(login({ username: signInUsername, token: data.token }));
+              setSignInUsername("");
+              setSignInPassword("");*/
+              console.log(data)
+            }
+          });
+      };
 
 const popoverSignUp = (
   <div className={styles.popoverContent}>
@@ -66,7 +91,7 @@ const popoverSignIn = (
       className={styles.input}
       onChange={(e) => setLoginPassword(e.target.value)}
     />
-    <button>Sign in</button>
+    <button onClick={() => handleSignin()}>Sign in</button>
   </div>
 );
 
