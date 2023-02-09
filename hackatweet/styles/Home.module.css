@@ -1,22 +1,61 @@
 .main {
+    display: flex;
+    background-color: #161D26;
+    width: 100vw;
+    height: 100vh;
+    color:white;
+}
+
+.logo {
+    width: 20%;
+    rotate: 180deg;
+}
+
+.left {
+width: 20%;
+padding: 30px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.middle {
+  width: 45%;
+border-right: 1px solid gray;
+border-left: 1px solid gray;
+}
+
+.top {
+  border-bottom: 1px solid gray;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.homeTitle {
+  align-self: flex-start;
+}
+
+.tweetInput {
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.lengthAndButton {
+  align-self: flex-end;
+  display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.tweetBtn {
+height: 30px; 
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
+.right {
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
 }
