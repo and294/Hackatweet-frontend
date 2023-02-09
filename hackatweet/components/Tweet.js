@@ -7,7 +7,7 @@ function Tweet() {
     <div className={styles.tweetContainer}>
       <div className={styles.headerTweet}>
         <img
-          src="../public/Sacha (24).JPG"
+          src="../public/Sacha(24).JPG"
           alt="ProfilePicture"
         />
         <span>firstname + username</span>
