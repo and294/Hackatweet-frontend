@@ -1,6 +1,7 @@
 import styles from "../styles/Login.module.css";
 import { Popover, Button } from "antd";
-import "antd/dist/reset.css";
+//import "antd/dist/reset.css";
+import "antd/dist/antd.css";
 import { useState } from "react";
 
 function Login() {
