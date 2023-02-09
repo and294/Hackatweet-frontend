@@ -53,6 +53,7 @@ const popoverSignUp = (
   <div className={styles.popoverContent}>
     <img src="/twitter-512.png" className={styles.logo} />
     <h2 style={{color: 'white'}}>Create your Hackatweet account</h2>
+    <div className={styles.inputsStyle}>
     <input
       type="text"
       placeholder="Firstname"
@@ -71,6 +72,7 @@ const popoverSignUp = (
       className={styles.input}
       onChange={(e) => setPassword(e.target.value)}
     />
+    </div>
     <button className={styles.popBtn} onClick={() => handleSignup()}>Sign up</button>
   </div>
 );
@@ -107,7 +109,7 @@ const popoverSignIn = (
         <h1 style={{ color: "white" }}>
           See what's <br /> happening
         </h1>
-        <h3 style={{ color: "white" }}>Join Hackatweet today.</h3>
+        <h3 style={{ color: "white", fontSize: 20 }}>Join Hackatweet today.</h3>
         <Popover
           content={popoverSignUp}
           className={styles.popover}
@@ -115,7 +117,7 @@ const popoverSignIn = (
           <button className={styles.btnSignUp}>Sign up</button>
         </Popover>
 
-        <p>Already have an account?</p>
+        <p><em>Already have an account?</em></p>
         <Popover
           content={popoverSignIn}
           className={styles.popover}

@@ -1,5 +1,6 @@
 import styles from "../styles/Home.module.css";
 import Tweet from "./Tweet";
+import Trends from "./Trends";
 
 function Home() {
   return (
@@ -36,13 +37,7 @@ function Home() {
       </div>
 
       <div className={styles.right}>
-        <h1 className={styles.trendTitle}>Trends</h1>
-        <div className={styles.trendContainer}>
-          <div className={styles.trend}>
-            <h4>#hackatweet</h4>
-            <p style={{ color: "gray" }}>2 Tweets</p>
-          </div>
-        </div>
+        <Trends />
       </div>
     </div>
   );

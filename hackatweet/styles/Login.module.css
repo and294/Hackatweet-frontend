@@ -33,6 +33,8 @@
     color: white;
     background-color: #3F93E8;
     border: 1px solid #3F93E8;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .btnSignIn {
@@ -41,12 +43,14 @@ width: 40%;
     padding-bottom: 10px;
     border-radius: 20px;
     background: none;
-    border: 1px solid #3F93E8;
-    color: #3F93E8;
+    border: 2px solid #939596;
+    color: #939596;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .popoverContent {
-    background-color: #161D26;
+    background-color: #161F2D;
     color: red;
     display: flex;
     flex-direction: column;
@@ -57,18 +61,30 @@ width: 40%;
 }
 .input {
     background: none;
-    border: 1px solid white;
-    border-radius: 5px;
-    margin-bottom: 5px;
+    border: 2px solid #939596;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+}
+
+.inputsStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
 }
 
 .popBtn {
-    width: 40%;
+    width: 35%;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 20px;
-    background: none;
-    border: 1px solid #3F93E8;
-    color: #3F93E8;
+    background: white;
+    border: 2px solid #939596;
+    color: #161F2D;
+    font-weight: bold;
 }
 

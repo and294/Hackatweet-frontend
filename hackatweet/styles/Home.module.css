@@ -39,9 +39,10 @@
   padding-bottom: 10px;
   border-radius: 20px;
   background: none;
-  border: 1px solid #3f93e8;
-  color: #3f93e8;
+  border: 2px solid #939596;
+  color: #939596;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .middle {
@@ -75,25 +76,30 @@
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  width: 22%;
+  margin-right: 40px;
 }
 
 .tweetBtn {
+  width: 100%;
   padding: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   border-radius: 20px;
   background-color: #3f93e8;
   border: 1px solid #3f93e8;
   color: white;
   margin-left: 10px;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .right {
   width: 36%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   padding: 10px;
 }
 
