@@ -6,10 +6,7 @@ function Tweet() {
   return (
     <div className={styles.tweetContainer}>
       <div className={styles.headerTweet}>
-        <img
-          src="../public/Sacha(24).JPG"
-          alt="ProfilePicture"
-        />
+        <img className={styles.profilePic}src="../public/Sacha(24).JPG" alt="ProfilePicture" />
         <span>firstname + username</span>
         <span>date from now</span>
       </div>
