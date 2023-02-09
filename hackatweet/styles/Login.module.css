@@ -44,3 +44,11 @@ width: 40%;
     border: 1px solid #3F93E8;
     color: #3F93E8;
 }
+
+.popoverContent {
+    background-color: #161D26;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
