@@ -29,6 +29,13 @@ fetch("http://localhost:3000/users/signup", {
 })
   .then((response) => response.json())
   .then((data) => {
+    dispatch(
+      login({
+        firstname: data.firstname,
+        username: loginUserName,
+        token: data.token,
+      })
+    );
     window.location.replace("/home");
   });
     };
@@ -45,7 +52,8 @@ fetch("http://localhost:3000/users/signup", {
           .then((response) => response.json())
           .then((data) => {
             if (data.token) {
-              dispatch(login({ firstname: data.firstname, username: loginUserName, token: data.token }));
+              console.log(data.data.firstname)
+              dispatch(login({ firstname: data.data.firstname, username: loginUserName, token: data.token }));
              // setLoginUserName("");
               //setLoginPassword("");
               window.location.replace("/home");
