@@ -5,8 +5,12 @@ import { useSelector } from "react-redux";
 
 
 function Tweet(props) {
+<<<<<<< HEAD
   const user = useSelector((state) => state.user.value);
 
+=======
+console.log("🚀", props)
+>>>>>>> 97d7fd3c1b86e2b26717dc9ba3cdcb41a8c7b58a
 
   
 
