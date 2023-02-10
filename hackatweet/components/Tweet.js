@@ -18,7 +18,7 @@ function Tweet(props) {
         <span>{props.id}</span>
       </div>
       <div className={styles.contentTweet}>
-        <p>{props.tweet}</p>
+        <p>{props.content}</p>
       </div>
       <div className={styles.footerTweet}>
         <div>

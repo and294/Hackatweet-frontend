@@ -19,6 +19,7 @@ function handleLogout() {
 
 const [tweetMsg, setTweetMsg] = useState('')
 const [tweetLength, setTweetLength] = useState(0)
+const [trigger, setTrigger] = useState(false)
 
 function handleTweetChange(str) {
   setTweetMsg(str);
@@ -34,21 +35,22 @@ function handleAddTweet() {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    tweet: tweetMsg,
+    content: tweetMsg,
   }),
 })
   .then((response) => response.json())
   .then((data) => {
-
+setTrigger(!trigger)
 })}
 
-let tweets = [];
+const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/tweets")
       .then((response) => response.json())
       .then((TweetData) => {
-          tweets = TweetData.map((data, i) => { {
+        console.log(TweetData.tweet)
+          setTweets(TweetData.tweet.map((data, i) => { {
               return (
                 <Tweet
                   key={i}
@@ -56,9 +58,9 @@ let tweets = [];
                 />
               );
             }
-          });
+          }))
       });
-  }, []);
+  }, [trigger]);
 
 
   return (

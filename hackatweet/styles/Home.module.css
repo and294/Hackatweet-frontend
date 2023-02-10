@@ -57,6 +57,8 @@
   width: 45%;
   border-right: 1px solid gray;
   border-left: 1px solid gray;
+  overflow: scroll;
+
 }
 
 .top {
@@ -103,6 +105,7 @@
   font-size: 15px;
   font-weight: bold;
 }
+
 
 .right {
   width: 36%;
