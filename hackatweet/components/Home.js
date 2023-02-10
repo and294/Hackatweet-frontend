@@ -6,8 +6,14 @@ import { logout } from "../reducers/user";
 
 function Home() {
 
+const dispatch = useDispatch()
 const user = useSelector((state) => state.user.value);
-console.log(user)
+console.log(user.value);
+
+function handleLogout() {
+  dispatch(logout());
+  window.location.replace("/");
+}
 
   return (
     <div className={styles.main}>
@@ -18,11 +24,11 @@ console.log(user)
             <img className={styles.profilPic} alt="profil pic" src='/Sacha(24).JPG'/>
             <div className={styles.userName}>
               <h3>{user.firstname}</h3>
-              <p>@JohnCena</p>
+              <p>@{user.username}</p>
             </div>
           </div>
 
-          <button className={styles.logoutBtn}>Logout</button>
+          <button className={styles.logoutBtn} onClick={() => handleLogout()}>Logout</button>
         </div>
       </div>
 
