@@ -32,18 +32,18 @@ function handleTweetChange(str) {
 
 function handleAddTweet() {
   fetch("http://localhost:3000/tweets/add", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    username: user.username,
-    firstname: user.firstname,
-    content: tweetMsg,
-  }),
-})
-  .then((response) => response.json())
-  .then((data) => {
-setTrigger(!trigger)
-})}
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: user.username,
+      firstname: user.firstname,
+      content: tweetMsg,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      setTrigger(!trigger);
+    });}
 
 const [tweets, setTweets] = useState([]);
 

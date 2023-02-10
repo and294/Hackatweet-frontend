@@ -15,7 +15,7 @@ function Tweet(props) {
           alt="ProfilePicture"
         />
         <span>
-          {props.firstname} - {props.username}
+          {props.firstname} - @{props.username}
         </span>
         <span>•</span>
         <span>{props.id}</span>
