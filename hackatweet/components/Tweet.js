@@ -24,10 +24,12 @@ function Tweet(props) {
       <FontAwesomeIcon
         className={styles.icon}
         icon={faTrash}
-        onClick={() => handleDelete()}
+        onClick={() => handleDelete(props._id)}
       />
+      
     );
   }
+  console.log("🚀 ~ file: Tweet.js:28 ~ Tweet ~ props._id", props._id)
 
   return (
     <div className={styles.tweetContainer}>

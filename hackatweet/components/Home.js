@@ -53,11 +53,11 @@ const [tweets, setTweets] = useState([]);
     fetch("http://localhost:3000/tweets")
       .then((response) => response.json())
       .then((TweetData) => {
-        console.log(TweetData.tweet)
           setTweets(TweetData.tweet.map((data, i) => { {
               return (
                 <Tweet
                   key={i}
+                  id={data._id}
                   {...data}
                 />
               );
