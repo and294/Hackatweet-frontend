@@ -29,6 +29,9 @@ function handleTweetChange(str) {
   console.log(tweetMsg, tweetLength)
 }
 
+function handleTweet() {
+  tweetMsg
+
 
   return (
     <div className={styles.main}>
