@@ -6,7 +6,10 @@ import { useSelector } from "react-redux";
 function Tweet(props) {
   const user = useSelector((state) => state.user.value);
 
+<<<<<<< HEAD
   console.log("🚀", props);
+=======
+>>>>>>> 7b464d50d165e4ba16d4185adf2450edb6ead9a8
 
   function handleDelete(id) {
     fetch(`http://localhost:3000/tweets/del/${id}`, {
@@ -14,9 +17,12 @@ function Tweet(props) {
     })
       .then((response) => response.json())
       .then((data) => {
+<<<<<<< HEAD
         console.log("delete");
         props.setTweets(data.tweets);
         console.log(data)
+=======
+>>>>>>> 7b464d50d165e4ba16d4185adf2450edb6ead9a8
       });
   }
 
@@ -28,6 +34,7 @@ function Tweet(props) {
         icon={faTrash}
         onClick={() => handleDelete(props._id)}
       />
+      
     );
   }
 

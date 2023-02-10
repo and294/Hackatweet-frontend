@@ -43,6 +43,7 @@ function Home() {
     })
       .then((response) => response.json())
       .then((data) => {
+<<<<<<< HEAD
         setTweets(data.tweets);
         setTrigger(!trigger);
         //console.log(tweets);
@@ -50,20 +51,40 @@ function Home() {
         console.log(tweets);
       });
   }
+=======
+        setTrigger(!trigger);
+      });
+  }
+
+  const [tweets, setTweets] = useState([]);
+>>>>>>> 7b464d50d165e4ba16d4185adf2450edb6ead9a8
 
   useEffect(() => {
     fetch("http://localhost:3000/tweets")
       .then((response) => response.json())
       .then((TweetData) => {
+<<<<<<< HEAD
         console.log(TweetData.tweet);
         setTweets(TweetData.tweet);
+=======
+        setTweets(
+          TweetData.tweet.map((data, i) => {
+            {
+              return <Tweet key={i} id={data._id} {...data} />;
+            }
+          })
+        );
+>>>>>>> 7b464d50d165e4ba16d4185adf2450edb6ead9a8
       });
   }, []);
 
+<<<<<<< HEAD
   const alltweet = tweets.map((data, i) => (
     <Tweet setTweets={setTweets} key={i} {...data} />
   ));
 
+=======
+>>>>>>> 7b464d50d165e4ba16d4185adf2450edb6ead9a8
   return (
     <div className={styles.main}>
       <div className={styles.left}>
@@ -103,7 +124,8 @@ function Home() {
             <p>{tweetLength}/280</p>
             <button
               className={styles.tweetBtn}
-              onClick={() => handleAddTweet()}>
+              onClick={() => handleAddTweet()}
+            >
               Tweet
             </button>
           </div>
