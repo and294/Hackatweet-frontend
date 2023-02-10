@@ -3,16 +3,10 @@ import { faTrash, faHeart } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Tweet.module.css";
 import { useSelector } from "react-redux";
 
-
 function Tweet(props) {
-<<<<<<< HEAD
   const user = useSelector((state) => state.user.value);
 
-=======
-console.log("🚀", props)
->>>>>>> 97d7fd3c1b86e2b26717dc9ba3cdcb41a8c7b58a
-
-  
+  console.log("🚀", props);
 
   function handleDelete(id) {
     fetch(`http://localhost:3000/tweets/del/${id}`, {
@@ -21,6 +15,8 @@ console.log("🚀", props)
       .then((response) => response.json())
       .then((data) => {
         console.log("delete");
+        props.setTweets(data.tweets);
+        console.log(data)
       });
   }
 
@@ -30,7 +26,7 @@ console.log("🚀", props)
       <FontAwesomeIcon
         className={styles.icon}
         icon={faTrash}
-        onClick={() => handleDelete()}
+        onClick={() => handleDelete(props._id)}
       />
     );
   }
