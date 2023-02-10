@@ -35,6 +35,8 @@ function handleAddTweet() {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
+    username: user.username,
+    firstname: user.firstname,
     content: tweetMsg,
   }),
 })
@@ -93,6 +95,7 @@ const [tweets, setTweets] = useState([]);
           <input
             type="text"
             name=""
+            maxLength='280'
             className={styles.tweetInput}
             onChange={(e) => handleTweetChange(e.target.value)}
           />
