@@ -4,6 +4,7 @@ import Trends from "./Trends";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/user";
 
+
 function Home() {
 
 const user = useSelector((state) => state.user.value);
