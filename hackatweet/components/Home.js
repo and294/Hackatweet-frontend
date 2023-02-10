@@ -3,17 +3,31 @@ import Tweet from "./Tweet";
 import Trends from "./Trends";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/user";
+import { useState } from "react";
 
 function Home() {
 
 const dispatch = useDispatch()
 const user = useSelector((state) => state.user.value);
-console.log(user.value);
+
 
 function handleLogout() {
   dispatch(logout());
   window.location.replace("/");
 }
+
+const [tweetMsg, setTweetMsg] = useState('')
+const [tweetLength, setTweetLength] = useState(0)
+
+function handleTweetChange(str) {
+  setTweetMsg(str);
+  setTweetLength(tweetMsg.length + 1)
+  if(tweetMsg.length + 1 == 0){
+    setTweetLength(0);
+  }
+  console.log(tweetMsg, tweetLength)
+}
+
 
   return (
     <div className={styles.main}>
@@ -36,10 +50,10 @@ function handleLogout() {
         <div className={styles.top}>
           <h1 className={styles.homeTitle}>Home</h1>
 
-          <input type="text" name="" id="" className={styles.tweetInput} />
+          <input type="text" name="" className={styles.tweetInput} onChange={(e) => handleTweetChange(e.target.value)}/>
 
           <div className={styles.lengthAndButton}>
-            <p>0/280</p>
+            <p>{tweetLength}/280</p>
             <button className={styles.tweetBtn}>Tweet</button>
           </div>
         </div>
