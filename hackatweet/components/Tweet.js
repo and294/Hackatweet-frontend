@@ -1,10 +1,35 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faHeart } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Tweet.module.css";
+import { useSelector } from "react-redux";
+
 
 function Tweet(props) {
+  const user = useSelector((state) => state.user.value);
 
 
+  
+
+  function handleDelete(id) {
+    fetch(`http://localhost:3000/tweets/del/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("delete");
+      });
+  }
+
+  let deleteBtn;
+  if (props.username === user.username) {
+    deleteBtn = (
+      <FontAwesomeIcon
+        className={styles.icon}
+        icon={faTrash}
+        onClick={() => handleDelete()}
+      />
+    );
+  }
 
   return (
     <div className={styles.tweetContainer}>
@@ -31,13 +56,7 @@ function Tweet(props) {
             onClick={() => console.log("like")}
           />
         </div>
-        <div>
-          <FontAwesomeIcon
-            className={styles.icon}
-            icon={faTrash}
-            onClick={() => console.log("delete")}
-          />
-        </div>
+        <div>{deleteBtn}</div>
       </div>
     </div>
   );

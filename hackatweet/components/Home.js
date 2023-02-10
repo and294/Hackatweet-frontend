@@ -47,6 +47,8 @@ function handleAddTweet() {
 
 const [tweets, setTweets] = useState([]);
 
+
+
   useEffect(() => {
     fetch("http://localhost:3000/tweets")
       .then((response) => response.json())
