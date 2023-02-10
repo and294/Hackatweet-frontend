@@ -8,7 +8,7 @@ function Tweet(props) {
       <div className={styles.headerTweet}>
         <img
           className={styles.profilePic}
-          src="../public/Sacha(24).JPG"
+          src="/Sacha(24).JPG"
           alt="ProfilePicture"
         />
         <span>
