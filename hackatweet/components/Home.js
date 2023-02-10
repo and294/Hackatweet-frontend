@@ -5,67 +5,59 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/user";
 import { useState, useEffect } from "react";
 
-
 function Home() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.value);
 
-const dispatch = useDispatch()
-const user = useSelector((state) => state.user.value);
-
-
-function handleLogout() {
-  dispatch(logout());
-  window.location.replace("/");
-}
-
-const [tweetMsg, setTweetMsg] = useState('')
-const [tweetLength, setTweetLength] = useState(0)
-const [trigger, setTrigger] = useState(false)
-
-function handleTweetChange(str) {
-  setTweetMsg(str);
-  setTweetLength(tweetMsg.length + 1)
-  if(tweetMsg.length + 1 == 0){
-    setTweetLength(0);
+  function handleLogout() {
+    dispatch(logout());
+    window.location.replace("/");
   }
-  console.log(tweetMsg, tweetLength)
-}
 
-function handleAddTweet() {
-  fetch("http://localhost:3000/tweets/add", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      username: user.username,
-      firstname: user.firstname,
-      content: tweetMsg,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      setTrigger(!trigger);
-    });}
+  const [tweetMsg, setTweetMsg] = useState("");
+  const [tweetLength, setTweetLength] = useState(0);
+  const [trigger, setTrigger] = useState(false);
 
-const [tweets, setTweets] = useState([]);
+  function handleTweetChange(str) {
+    setTweetMsg(str);
+    setTweetLength(tweetMsg.length + 1);
+    if (tweetMsg.length + 1 == 0) {
+      setTweetLength(0);
+    }
+    console.log(tweetMsg, tweetLength);
+  }
 
+  function handleAddTweet() {
+    fetch("http://localhost:3000/tweets/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: user.username,
+        firstname: user.firstname,
+        content: tweetMsg,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setTrigger(!trigger);
+      });
+  }
 
+  const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/tweets")
       .then((response) => response.json())
       .then((TweetData) => {
-          setTweets(TweetData.tweet.map((data, i) => { {
-              return (
-                <Tweet
-                  key={i}
-                  id={data._id}
-                  {...data}
-                />
-              );
+        setTweets(
+          TweetData.tweet.map((data, i) => {
+            {
+              return <Tweet key={i} id={data._id} {...data} />;
             }
-          }))
+          })
+        );
       });
   }, [trigger]);
-
 
   return (
     <div className={styles.main}>
@@ -97,7 +89,7 @@ const [tweets, setTweets] = useState([]);
           <input
             type="text"
             name=""
-            maxLength='280'
+            maxLength="280"
             className={styles.tweetInput}
             onChange={(e) => handleTweetChange(e.target.value)}
           />
@@ -106,7 +98,8 @@ const [tweets, setTweets] = useState([]);
             <p>{tweetLength}/280</p>
             <button
               className={styles.tweetBtn}
-              onClick={() => handleAddTweet()}>
+              onClick={() => handleAddTweet()}
+            >
               Tweet
             </button>
           </div>

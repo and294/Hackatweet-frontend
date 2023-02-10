@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 function Tweet(props) {
   const user = useSelector((state) => state.user.value);
 
-  console.log("🚀", props);
 
   function handleDelete(id) {
     fetch(`http://localhost:3000/tweets/del/${id}`, {
@@ -14,7 +13,6 @@ function Tweet(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("delete");
       });
   }
 
@@ -29,7 +27,6 @@ function Tweet(props) {
       
     );
   }
-  console.log("🚀 ~ file: Tweet.js:28 ~ Tweet ~ props._id", props._id)
 
   return (
     <div className={styles.tweetContainer}>
