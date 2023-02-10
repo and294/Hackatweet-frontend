@@ -3,7 +3,7 @@ import Tweet from "./Tweet";
 import Trends from "./Trends";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/user";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 function Home() {
@@ -29,6 +29,37 @@ function handleTweetChange(str) {
   console.log(tweetMsg, tweetLength)
 }
 
+function handleAddTweet() {
+  fetch("http://localhost:3000/tweets/add", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    tweet: tweetMsg,
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => {
+
+})}
+
+let tweets = [];
+
+  useEffect(() => {
+    fetch("http://localhost:3000/tweets")
+      .then((response) => response.json())
+      .then((TweetData) => {
+          tweets = TweetData.map((data, i) => { {
+              return (
+                <Tweet
+                  key={i}
+                  {...data}
+                />
+              );
+            }
+          });
+      });
+  }, []);
+
 
   return (
     <div className={styles.main}>
@@ -36,14 +67,20 @@ function handleTweetChange(str) {
         <img src="/twitter-512.png" className={styles.logo} />
         <div className={styles.user}>
           <div className={styles.userInfo}>
-            <img className={styles.profilPic} alt="profil pic" src='/Sacha(24).JPG'/>
+            <img
+              className={styles.profilPic}
+              alt="profil pic"
+              src="/Sacha(24).JPG"
+            />
             <div className={styles.userName}>
               <h3>{user.firstname}</h3>
               <p>@{user.username}</p>
             </div>
           </div>
 
-          <button className={styles.logoutBtn} onClick={() => handleLogout()}>Logout</button>
+          <button className={styles.logoutBtn} onClick={() => handleLogout()}>
+            Logout
+          </button>
         </div>
       </div>
 
@@ -51,16 +88,23 @@ function handleTweetChange(str) {
         <div className={styles.top}>
           <h1 className={styles.homeTitle}>Home</h1>
 
-          <input type="text" name="" className={styles.tweetInput} onChange={(e) => handleTweetChange(e.target.value)}/>
+          <input
+            type="text"
+            name=""
+            className={styles.tweetInput}
+            onChange={(e) => handleTweetChange(e.target.value)}
+          />
 
           <div className={styles.lengthAndButton}>
             <p>{tweetLength}/280</p>
-            <button className={styles.tweetBtn}>Tweet</button>
+            <button
+              className={styles.tweetBtn}
+              onClick={() => handleAddTweet()}>
+              Tweet
+            </button>
           </div>
         </div>
-        <div className={styles.middleBottom}>
-          <Tweet />
-        </div>
+        <div className={styles.middleBottom}>{tweets}</div>
       </div>
 
       <div className={styles.right}>
