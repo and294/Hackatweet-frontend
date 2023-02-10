@@ -3,6 +3,8 @@ import { Popover, Button } from "antd";
 //import "antd/dist/reset.css";
 import "antd/dist/antd.css";
 import { useState } from "react";
+import { useDispatch } from 'react-redux'
+import { login, logout } from "../reducers/user";
 
 function Login() {
 
@@ -12,6 +14,8 @@ function Login() {
 
     const [loginUserName, setLoginUserName] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
+
+    const dispatch = useDispatch()
 
     function handleSignup() {
 fetch("http://localhost:3000/users/signup", {
@@ -25,7 +29,7 @@ fetch("http://localhost:3000/users/signup", {
 })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    window.location.replace("/home");
   });
     };
 
@@ -41,10 +45,10 @@ fetch("http://localhost:3000/users/signup", {
           .then((response) => response.json())
           .then((data) => {
             if (data.token) {
-              /*dispatch(login({ username: signInUsername, token: data.token }));
-              setSignInUsername("");
-              setSignInPassword("");*/
-              console.log(data)
+              dispatch(login({ username: loginUserName, token: data.token }));
+             // setLoginUserName("");
+              //setLoginPassword("");
+              window.location.replace("/home");
             }
           });
       };
