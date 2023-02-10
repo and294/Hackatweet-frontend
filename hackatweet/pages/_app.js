@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import Head from "next/head";
-import { user } from "../reducers/user";
+import  user  from "../reducers/user";
 import { persistStore, persistReducer } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";

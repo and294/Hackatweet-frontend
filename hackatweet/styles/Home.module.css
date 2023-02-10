@@ -32,6 +32,14 @@
   margin-left: 10px;
 }
 
+.profilPic {
+    width: 50px;
+    height: 70px;
+    border-radius: 70%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
 .logoutBtn {
   margin-top: 10px;
   width: 40%;

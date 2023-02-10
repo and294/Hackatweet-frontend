@@ -45,7 +45,7 @@ fetch("http://localhost:3000/users/signup", {
           .then((response) => response.json())
           .then((data) => {
             if (data.token) {
-              dispatch(login({ username: loginUserName, token: data.token }));
+              dispatch(login({ firstname: data.firstname, username: loginUserName, token: data.token }));
              // setLoginUserName("");
               //setLoginPassword("");
               window.location.replace("/home");
